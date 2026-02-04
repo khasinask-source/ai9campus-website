@@ -1,53 +1,59 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 
-export default function Header() {
+// CHANGE: We removed 'default' and just use 'export function'
+export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-card/95 shadow-sm backdrop-blur-md supports-[backdrop-filter]:bg-card/80">
       <div className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
         
-        {/* Logo */}
+        {/* Logo Section */}
         <Link href="/" className="flex items-center gap-2">
-          <Image
-            src="/ai9campus-logo.png"
-            alt="AI9CAMPUS Logo"
-            width={160}
-            height={40}
-            priority
+          {/* Ensure your image path is correct in the public folder */}
+          <img 
+            src="/logo.png" 
+            alt="Logo" 
+            className="h-8 w-auto" 
           />
+          <span className="text-xl font-bold">AI9 Campus</span>
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-          <Link href="#features">Features</Link>
-          <Link href="#solutions">Solutions</Link>
-          <Link href="#about">About</Link>
-          <Link href="#contact">Contact</Link>
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex gap-6">
+           <Link href="/about" className="text-sm font-medium transition-colors hover:text-primary">
+             About
+           </Link>
+           <Link href="/courses" className="text-sm font-medium transition-colors hover:text-primary">
+             Courses
+           </Link>
         </nav>
 
-        {/* CTA */}
-        <div className="hidden md:flex">
-          <Link
-            href="#contact"
-            className="rounded-lg bg-emerald-600 px-5 py-2 text-sm font-semibold text-white hover:bg-emerald-700 transition"
-          >
-            Request Demo
-          </Link>
-        </div>
-
         {/* Mobile Menu Button */}
-        <button
-          className="md:hidden"
+        <button 
+          className="md:hidden p-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
-          ☰
+          <span className="sr-only">Open main menu</span>
+          <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
         </button>
+
       </div>
+      
+      {/* Mobile Menu Dropdown */}
+      {mobileMenuOpen && (
+        <div className="md:hidden border-t p-4 bg-background">
+          <div className="flex flex-col space-y-4">
+            <Link href="/about" onClick={() => setMobileMenuOpen(false)}>About</Link>
+            <Link href="/courses" onClick={() => setMobileMenuOpen(false)}>Courses</Link>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

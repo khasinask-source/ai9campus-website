@@ -1,5 +1,4 @@
 import { MessageSquare, FileCheck, BookOpen, LayoutDashboard, FileBarChart } from "lucide-react";
-import Image from "next/image";
 
 const features = [
   {
@@ -46,12 +45,14 @@ export function Features() {
         </div>
 
         <div className="mb-8 flex justify-center">
-          <Image
-            src="/4-20wheels.jpeg"
-            alt="AI9CAMPUS ecosystem showing PrincipalAI Dashboard at center connected to AttendanceAI, AdminAI, ClassroomAI, and ExamAI modules"
-            width={700}
-            height={525}
-            className="w-full max-w-3xl rounded-2xl shadow-xl ring-1 ring-border/50"
+          {/* TEACHER NOTE: 
+             We are using a standard HTML <img> tag here.
+             It looks for "ecosystem.jpg" inside the "public" folder.
+          */}
+          <img
+            src="/ecosystem.jpg" 
+            alt="AI9CAMPUS ecosystem showing PrincipalAI Dashboard"
+            className="w-full max-w-3xl rounded-2xl shadow-xl ring-1 ring-border/50 object-cover"
           />
         </div>
 

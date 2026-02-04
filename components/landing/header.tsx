@@ -12,15 +12,17 @@ export function Header() {
       <div className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
         
         {/* Logo Section */}
-        <Link href="/" className="flex items-center gap-2">
-          {/* Ensure your image path is correct in the public folder */}
-        <img 
-  src="/logo.png" 
-  alt="AI9 Campus Logo" 
-  className="h-8 w-auto" 
-/>
-          <span className="text-xl font-bold">AI9 Campus</span>
-        </Link>
+        <Link href="/" className="flex items-center gap-3">
+  {/* I changed h-8 to h-20 (Height 20). This makes it much bigger! */}
+  <img 
+    src="/logo.png" 
+    alt="AI9 Campus Logo" 
+    className="h-20 w-auto" 
+  />
+  
+  {/* I also increased text size from 'text-xl' to 'text-2xl' so it matches the big logo */}
+  <span className="text-2xl font-bold">AI9 Campus</span>
+</Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-6">

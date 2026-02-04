@@ -34,12 +34,13 @@ export function Footer() {
         <div className="grid gap-8 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <a href="/" className="flex items-center gap-2">
+              {/* UPDATED: File name is now logo.png and size is h-24 (Big) */}
               <Image
-                src="/logo.jpeg"
+                src="/logo.png"
                 alt="AI9CAMPUS Logo"
-                width={120}
-                height={42}
-                className="h-10 w-auto object-contain"
+                width={200}
+                height={80}
+                className="h-24 w-auto object-contain"
               />
             </a>
             <p className="mt-3 max-w-sm text-sm text-muted-foreground">

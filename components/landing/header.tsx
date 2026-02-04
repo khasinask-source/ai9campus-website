@@ -14,11 +14,11 @@ export function Header() {
         {/* Logo Section */}
         <Link href="/" className="flex items-center gap-2">
           {/* Ensure your image path is correct in the public folder */}
-          <img 
-            src="/logo.png" 
-            alt="Logo" 
-            className="h-8 w-auto" 
-          />
+        <img 
+  src="/logo.png" 
+  alt="AI9 Campus Logo" 
+  className="h-8 w-auto" 
+/>
           <span className="text-xl font-bold">AI9 Campus</span>
         </Link>
 
